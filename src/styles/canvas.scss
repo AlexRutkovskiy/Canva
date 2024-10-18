@@ -1,0 +1,15 @@
+@import "./variables.scss";
+
+$name: "canvas";
+
+.#{$name} {
+  height: calc(100vh - calc(2 * $bar-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & canvas {
+    border: 1px solid black;
+    background-color: white;
+  }
+}
