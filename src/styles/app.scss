@@ -1,0 +1,21 @@
+@import "./variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$name: "app";
+
+.#{$name} {
+  height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
+  background-color: $background-color;
+
+  &__panel {
+    box-shadow: 0 4px 5px gray;
+  }
+}

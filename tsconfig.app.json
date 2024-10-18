@@ -14,9 +14,9 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-      "@components/*": ["./src/components"],
-      "@store/*": ["./src/store"],
-      "@styles/*": ["./src/styles"],
+      "@components/*": ["./src/components/*"],
+      "@store/*": ["./src/store/*"],
+      "@styles/*": ["./src/styles/*"],
     },
 
     /* Linting */
