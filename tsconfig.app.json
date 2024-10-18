@@ -17,6 +17,8 @@
       "@components/*": ["./src/components/*"],
       "@store/*": ["./src/store/*"],
       "@styles/*": ["./src/styles/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@config": ["./src/config"],
     },
 
     /* Linting */

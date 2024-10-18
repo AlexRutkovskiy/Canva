@@ -5,10 +5,73 @@ $name: "bar";
 .#{$name} {
   height: $bar-height;
   background: white;
-  display: flex;
-  align-items: center;
 
   &:not(:last-of-type) {
     border-bottom: 1px solid #9d9d9d;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 2px 25px;
+    height: 100%;
+  }
+
+  &__col-left,
+  &__col-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__btn {
+    width: 25px;
+    height: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: inherit;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    &:hover,
+    &:focus {
+      background-color: $btn-color-hover;
+    }
+
+    &.brush {
+      background-image: url("@assets/image/brush.png");
+    }
+
+    &.rect {
+      background-image: url("@assets/image/rect.png");
+    }
+
+    &.circle {
+      background-image: url("@assets/image/circle.png");
+    }
+
+    &.eraser {
+      background-image: url("@assets/image/eraser.png");
+    }
+
+    &.line {
+      background-image: url("@assets/image/line.png");
+    }
+
+    &.undo {
+      background-image: url("@assets/image/undo.png");
+    }
+
+    &.save {
+      background-image: url("@assets/image/save.png");
+    }
+
+    &.redo {
+      background-image: url("@assets/image/redo.png");
+    }
   }
 }

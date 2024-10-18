@@ -7,7 +7,9 @@ const SettingsBar: FC = () => {
 
   return (
     <div className={mainClass}>
-      Settings Bar
+      <div className={`${mainClass}__wrapper`}>
+        Settings Bar
+      </div>
     </div>
   )
 }
