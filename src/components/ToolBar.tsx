@@ -3,36 +3,23 @@ import { observer } from "mobx-react-lite"
 import clsx from "clsx";
 import "@styles/bar.scss";
 
-import { Config, ToolsName } from "@config"
-import Brush from "@tools/Brush";
-import DisableTool from "@tools/DisableTool";
+import { Config } from "@config"
 import canvasState from "@store/canvasState";
 import toolState from "@store/toolState";
+import toolManager from "@tools/ToolManager";
 
 
 const mainClass = "bar";
 const buttons = Config.toolbar.buttons;
 
 const ToolBar: FC = observer(() => {
-  
-  const manageTools = (tool: string | null) => {
-    switch(tool) {
-      case ToolsName.BRUSH:
-        toolState.setTool(ToolsName.BRUSH);
-        new Brush(canvasState.canvas!)
-        break;
-      default: 
-        toolState.setTool(null);
-        new DisableTool(canvasState.canvas!);
-        return;
-    }
-  }
 
-  const handleLeftBtnClick = useCallback((e: React.MouseEvent<HTMLElement>) => {
+  const handleToolBtnClick = useCallback((e: React.MouseEvent<HTMLElement>) => {
     const isActive = e.currentTarget.classList.contains('active');
     const name = !isActive ? e.currentTarget.getAttribute('name') : null;
     
-    manageTools(name)
+    toolState.setTool(name);
+    toolManager.run(canvasState.canvas!, name);
   }, [])
   
 
@@ -49,7 +36,7 @@ const ToolBar: FC = observer(() => {
                   `${mainClass}__btn ${btn.id}`, 
                   btn.id === toolState.selectedTool ? "active" : ""
                 )}
-                onClick={handleLeftBtnClick}
+                onClick={handleToolBtnClick}
               />
             )
           })}
