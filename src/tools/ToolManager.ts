@@ -2,6 +2,7 @@ import { ToolsName } from "@config";
 import Brush from "./Brush";
 import DisableTool from "./DisableTool";
 import Rect from "./Rect";
+import Circle from "./Circle"
 
 class ToolManager{
   private canvas!: HTMLCanvasElement;
@@ -12,6 +13,10 @@ class ToolManager{
 
   private enableRectTool() {
     return new Rect(this.canvas);
+  }
+
+  private enableCircleTool() {
+    return new Circle(this.canvas);
   }
 
   private disabledTools() {
@@ -28,6 +33,9 @@ class ToolManager{
       case ToolsName.RECT:
         this.enableRectTool();
         break;
+      case ToolsName.CIRCLE:
+        this.enableCircleTool();
+        break
       default: 
         this.disabledTools();
     }
