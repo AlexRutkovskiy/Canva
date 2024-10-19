@@ -70,7 +70,8 @@ $name: "bar";
     }
 
     &.active {
-      background-color: rgb(174, 223, 255);
+      outline: 2px solid rgb(174, 223, 255);
+      outline-offset: 3px;
     }
   }
 }
