@@ -14,9 +14,8 @@ export default class Brush extends Tool {
     this.canvas.onmousemove = this.mouseMoveHandler.bind(this);
   }
 
-  private mouseUpHandler(e: MouseEvent) {
+  private mouseUpHandler() {
     this.mouseDown = false;
-    console.log("Up", e)
   }
 
   private mouseDownHandler(e: MouseEvent) {
@@ -32,7 +31,7 @@ export default class Brush extends Tool {
     this.draw(e.offsetX, e.offsetY);
   }
 
-  private draw(x: number, y: number) {
+  protected draw(x: number, y: number) {
     this.ctx.lineTo(x, y);
     this.ctx.stroke();
   }

@@ -1,12 +1,17 @@
 import { ToolsName } from "@config";
 import Brush from "./Brush";
 import DisableTool from "./DisableTool";
+import Rect from "./Rect";
 
 class ToolManager{
   private canvas!: HTMLCanvasElement;
 
   private enableBrushTool() {
     return new Brush(this.canvas);
+  }
+
+  private enableRectTool() {
+    return new Rect(this.canvas);
   }
 
   private disabledTools() {
@@ -19,6 +24,9 @@ class ToolManager{
     switch(name) {
       case ToolsName.BRUSH:
         this.enableBrushTool()
+        break;
+      case ToolsName.RECT:
+        this.enableRectTool();
         break;
       default: 
         this.disabledTools();
