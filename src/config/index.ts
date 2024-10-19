@@ -39,5 +39,8 @@ export const Config = {
       ]
     }
   },
-  settingsbar: {}
+  settingsbar: {},
+  canvas: {
+    offset: 30
+  }
 }
