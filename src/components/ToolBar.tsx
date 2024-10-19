@@ -22,7 +22,7 @@ const ToolBar: FC = () => {
               />
             )
           })}
-          <input type="color" />
+          <input type="color" className={`${mainClass}__input`} />
         </div>
         <div className={`${mainClass}__col-right`}>
           {buttons.right.map(btn => {

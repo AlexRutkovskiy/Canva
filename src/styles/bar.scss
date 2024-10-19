@@ -37,11 +37,6 @@ $name: "bar";
     background-repeat: no-repeat;
     background-position: center center;
 
-    &:hover,
-    &:focus {
-      background-color: $btn-color-hover;
-    }
-
     &.brush {
       background-image: url("@assets/image/brush.png");
     }
@@ -73,5 +68,9 @@ $name: "bar";
     &.redo {
       background-image: url("@assets/image/redo.png");
     }
+  }
+
+  &__input {
+    cursor: pointer;
   }
 }
