@@ -19,7 +19,8 @@ const ToolBar: FC = observer(() => {
     const name = !isActive ? e.currentTarget.getAttribute('name') : null;
     
     toolState.setTool(name);
-    toolManager.run(canvasState.canvas!, name);
+    const instanceTool = toolManager.run(canvasState.canvas!, name);
+    toolState.setInstanceTool(instanceTool);
   }, [])
   
 

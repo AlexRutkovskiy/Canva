@@ -8,24 +8,46 @@ import Eraser from "./Eraser";
 
 class ToolManager{
   private canvas!: HTMLCanvasElement;
+  private strokeStyle: string = ''
 
   private enableBrushTool() {
+    if (this.strokeStyle) {
+      this.canvas.getContext('2d')!.strokeStyle = this.strokeStyle;
+      this.strokeStyle = ''
+    }
+    
     return new Brush(this.canvas);
   }
 
   private enableRectTool() {
+    if (this.strokeStyle) {
+      this.canvas.getContext('2d')!.strokeStyle = this.strokeStyle;
+      this.strokeStyle = ''
+    }
+    
     return new Rect(this.canvas);
   }
 
   private enableCircleTool() {
+    if (this.strokeStyle) {
+      this.canvas.getContext('2d')!.strokeStyle = this.strokeStyle;
+      this.strokeStyle = ''
+    }
+    
     return new Circle(this.canvas);
   }
 
   private enableLineTool() {
+    if (this.strokeStyle) {
+      this.canvas.getContext('2d')!.strokeStyle = this.strokeStyle;
+      this.strokeStyle = ''
+    }
+    
     return new Line(this.canvas);
   }
 
   private enableEraserTool() {
+    this.strokeStyle = this.canvas.getContext('2d')?.strokeStyle as string;
     return new Eraser(this.canvas);
   }
 
@@ -38,22 +60,17 @@ class ToolManager{
 
     switch(name) {
       case ToolsName.BRUSH:
-        this.enableBrushTool()
-        break;
+        return this.enableBrushTool()
       case ToolsName.RECT:
-        this.enableRectTool();
-        break;
+        return this.enableRectTool();
       case ToolsName.CIRCLE:
-        this.enableCircleTool();
-        break
+        return this.enableCircleTool();
       case ToolsName.LINE:
-        this.enableLineTool();
-        break;  
+        return this.enableLineTool();
       case ToolsName.ERASER:
-        this.enableEraserTool();
-        break;
+        return this.enableEraserTool();
       default: 
-        this.disabledTools();
+        return this.disabledTools();
     }
   }
 }
