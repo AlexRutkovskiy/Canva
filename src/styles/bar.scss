@@ -68,6 +68,10 @@ $name: "bar";
     &.redo {
       background-image: url("@assets/image/redo.png");
     }
+
+    &.active {
+      background-color: rgb(174, 223, 255);
+    }
   }
 
   &__input {

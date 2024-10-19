@@ -46,7 +46,7 @@ const Canvas: FC = observer(() => {
   }, [handleSetCoord])
 
   useEffect(() => {
-    canvasState.setCanvas(refCanvas.current)
+    canvasState.setCanvas(refCanvas.current);
   }, [])
 
   useEffect(() => {

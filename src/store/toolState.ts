@@ -1,7 +1,7 @@
 import { makeAutoObservable } from "mobx";
 
 class ToolState {
-  tool: string | null = null;
+  private tool: string | null = null;
 
   constructor() {
     makeAutoObservable(this);
@@ -10,6 +10,11 @@ class ToolState {
   setTool(value: string | null) {
     this.tool = value;
   }
+
+  get selectedTool() {
+    return this.tool;
+  }
+  
 }
 
 export default new ToolState();

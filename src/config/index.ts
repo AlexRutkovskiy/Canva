@@ -1,25 +1,33 @@
+export const ToolsName = {
+  BRUSH: "brush",
+  RECT: "rect",
+  CIRCLE: "circle",
+  ERASER: "eraser",
+  LINE: "line"
+}
+
 export const Config = {
   toolbar: {
     buttons: {
       left: [
         {
-          id: "brush",
+          id: ToolsName.BRUSH,
           icon: "brush.png"
         },
         {
-          id: "rect",
+          id: ToolsName.RECT,
           icon: "rect.png"
         },
         {
-          id: "circle",
+          id: ToolsName.CIRCLE,
           icon: "circle.png"
         },
         {
-          id: "eraser",
+          id: ToolsName.ERASER,
           icon: "eraser.png"
         },
         {
-          id: "line",
+          id: ToolsName.LINE,
           icon: "line.png"
         }
       ],

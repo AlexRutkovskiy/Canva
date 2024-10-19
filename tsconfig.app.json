@@ -19,6 +19,7 @@
       "@styles/*": ["./src/styles/*"],
       "@assets/*": ["./src/assets/*"],
       "@config": ["./src/config"],
+      "@tools/*": ["./src/tools/*"],
     },
 
     /* Linting */
