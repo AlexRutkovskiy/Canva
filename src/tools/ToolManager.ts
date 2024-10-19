@@ -4,6 +4,7 @@ import DisableTool from "./DisableTool";
 import Rect from "./Rect";
 import Circle from "./Circle";
 import Line from "./Line";
+import Eraser from "./Eraser";
 
 class ToolManager{
   private canvas!: HTMLCanvasElement;
@@ -22,6 +23,10 @@ class ToolManager{
 
   private enableLineTool() {
     return new Line(this.canvas);
+  }
+
+  private enableEraserTool() {
+    return new Eraser(this.canvas);
   }
 
   private disabledTools() {
@@ -44,6 +49,9 @@ class ToolManager{
       case ToolsName.LINE:
         this.enableLineTool();
         break;  
+      case ToolsName.ERASER:
+        this.enableEraserTool();
+        break;
       default: 
         this.disabledTools();
     }
