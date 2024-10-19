@@ -14,6 +14,7 @@ $name: "app";
   width: 100vw;
   max-width: 100vw;
   background-color: $background-color;
+  overflow: hidden;
 
   &__panel {
     box-shadow: 0 4px 5px gray;

@@ -12,6 +12,7 @@ export default defineConfig({
       { find: '@config', replacement: path.resolve(__dirname, 'src/config') },
       { find: '@store', replacement: path.resolve(__dirname, 'src/store') },
       { find: '@styles', replacement: path.resolve(__dirname, 'src/styles') },
+      { find: '@tools', replacement: path.resolve(__dirname, 'src/tools') },
     ],
   },
 })
